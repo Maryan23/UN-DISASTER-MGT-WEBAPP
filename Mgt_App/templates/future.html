@@ -1,5 +1,29 @@
+{% extends 'base.html'%}
+{% block content %}
 <h1>Weather Update</h1>
-{{r.location.country}}
-{{r.location.region}}
-Temperature{{r.current.temp_c}}
-Expected rain :{{forecast.forecastday.day.totalprecip_mm}}
+<div class="container mt-5">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Country</th>
+                <th>City</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Weather Condition</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="{{general.image}}"></td>
+                <td>{{ general.country }}</td>
+                <td>{{ general.city }}</td>
+                <td>{{ general.latitude }}</td>
+                <td>{{ general.longitude }}</td>
+                <td>{{ general.condition }}</td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}
