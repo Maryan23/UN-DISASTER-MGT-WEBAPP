@@ -9,3 +9,12 @@ class City(models.Model):
 
     class Meta: #show the plural of city as cities instead of citys
         verbose_name_plural = 'cities'
+
+class Region(models.Model):
+    name = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = 'regions'
