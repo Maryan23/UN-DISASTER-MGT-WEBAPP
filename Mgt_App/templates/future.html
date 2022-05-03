@@ -1,23 +1,23 @@
 {% extends 'base.html'%}
 {% block content %}
-<h1>Weather Update</h1>
+<h1 align="center">Weather Update</h1>
 <div class="container mt-5">
     <table class="table">
         <thead>
             <tr>
                 <th>Image</th>
                 <th>Country</th>
-                <th>City</th>
+                <th>Region</th>
                 <th>Latitude</th>
                 <th>Longitude</th>
-                <th>Weather Condition</th>
+                <th>Description</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td><img src="{{general.image}}"></td>
                 <td>{{ general.country }}</td>
-                <td>{{ general.city }}</td>
+                <td>{{ general.name }}</td>
                 <td>{{ general.latitude }}</td>
                 <td>{{ general.longitude }}</td>
                 <td>{{ general.condition }}</td>
@@ -25,5 +25,27 @@
             </tr>
         </tbody>
     </table>
+    <h2 align="center">Forecast data for {{general.city}} for the next ten days</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Average Temperature in Celsius</th>
+                <th>Total Rainfall in mm</th>
+                <th>Average Humidity</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for day in forecast %}
+            <tr>
+                <td>{{day.date}}</td>
+                <td>{{ day.day.avgtemp_c}}</td>
+                <td>{{ day.day.totalprecip_mm}}</td>
+                <td>{{ day.day.avghumidity }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
 </div>
 {% endblock %}
