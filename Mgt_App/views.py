@@ -3,6 +3,21 @@ import requests
 from .models import *
 
 # Create your views here.
+def home(request):
+    return render(request, 'index.html')
+
+def article(request):
+    return render(request, 'article.html')
+
+def categories(request):
+    return render(request, 'categories.html')
+
+def contact(request):
+    return render(request, 'contact.html')
+
+def about(request):
+    return render(request, 'about.html')
+
 
 def future(request):
     url = 'http://api.weatherapi.com/v1/forecast.json?key=22ace5ac6ed74aa397c195726220105&q={}&days=2&aqi=no&alerts=no'
