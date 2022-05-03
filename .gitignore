@@ -105,11 +105,14 @@ celerybeat.pid
 .env
 .venv
 env/
+virtual/
 venv/
 ENV/
 env.bak/
 venv.bak/
-
+mignon/
+start.sh
+migrate.sh
 # Spyder project settings
 .spyderproject
 .spyproject
